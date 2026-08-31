@@ -1,0 +1,90 @@
+{
+  "name": "AIModel",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "value": {
+      "type": "string"
+    },
+    "provider": {
+      "type": "string",
+      "enum": [
+        "openai",
+        "anthropic",
+        "google",
+        "openai_compatible"
+      ],
+      "default": "openai"
+    },
+    "base_url": {
+      "type": "string"
+    },
+    "api_key": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "value"
+  ],
+  "rls": {
+    "read": {
+      "$or": [
+        {
+          "user_condition": {
+            "role": "admin"
+          }
+        },
+        {
+          "user_condition": {
+            "role": "master_admin"
+          }
+        }
+      ]
+    },
+    "create": {
+      "$or": [
+        {
+          "user_condition": {
+            "role": "admin"
+          }
+        },
+        {
+          "user_condition": {
+            "role": "master_admin"
+          }
+        }
+      ]
+    },
+    "update": {
+      "$or": [
+        {
+          "user_condition": {
+            "role": "admin"
+          }
+        },
+        {
+          "user_condition": {
+            "role": "master_admin"
+          }
+        }
+      ]
+    },
+    "delete": {
+      "$or": [
+        {
+          "user_condition": {
+            "role": "admin"
+          }
+        },
+        {
+          "user_condition": {
+            "role": "master_admin"
+          }
+        }
+      ]
+    }
+  }
+}
