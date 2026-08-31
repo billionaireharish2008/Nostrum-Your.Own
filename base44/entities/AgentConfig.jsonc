@@ -1,0 +1,97 @@
+{
+  "name": "AgentConfig",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "system_prompt": {
+      "type": "string"
+    },
+    "model": {
+      "type": "string",
+      "default": "automatic"
+    },
+    "temperature": {
+      "type": "number",
+      "default": 0.4
+    },
+    "enabled": {
+      "type": "boolean",
+      "default": true
+    },
+    "agent_role": {
+      "type": "string",
+      "enum": [
+        "customer",
+        "admin"
+      ],
+      "default": "customer"
+    },
+    "capabilities": {
+      "type": "object"
+    }
+  },
+  "required": [
+    "name",
+    "system_prompt"
+  ],
+  "rls": {
+    "read": {
+      "$or": [
+        {
+          "user_condition": {
+            "role": "admin"
+          }
+        },
+        {
+          "user_condition": {
+            "role": "master_admin"
+          }
+        }
+      ]
+    },
+    "create": {
+      "$or": [
+        {
+          "user_condition": {
+            "role": "admin"
+          }
+        },
+        {
+          "user_condition": {
+            "role": "master_admin"
+          }
+        }
+      ]
+    },
+    "update": {
+      "$or": [
+        {
+          "user_condition": {
+            "role": "admin"
+          }
+        },
+        {
+          "user_condition": {
+            "role": "master_admin"
+          }
+        }
+      ]
+    },
+    "delete": {
+      "$or": [
+        {
+          "user_condition": {
+            "role": "admin"
+          }
+        },
+        {
+          "user_condition": {
+            "role": "master_admin"
+          }
+        }
+      ]
+    }
+  }
+}
