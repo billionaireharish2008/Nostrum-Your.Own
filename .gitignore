@@ -1,0 +1,65 @@
+# Environment and secrets
+.env
+.env.*
+!.env.example
+!.env.template
+*.pem
+*.key
+*.p12
+*.pfx
+credentials*.json
+service-account*.json
+secrets/
+secret/
+
+# Dependencies and build output
+node_modules/
+dist/
+dist-ssr/
+coverage/
+.vite/
+
+# Logs and local databases
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+*.sqlite
+*.sqlite3
+*.db
+
+# Local/editor files
+*.local
+.vscode/*
+!.vscode/extensions.json
+.idea/
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Base44 local project state
+base44/.app.jsonc
+
+# The previous file was incorrectly named with a .txt extension.
+.gitignore.txt
+
+# Malformed source copies from the original export
+*.txt
+
+# Malformed duplicate names replaced by canonical files
+/component.json
+/src/mains.jsx
+/src/components/Admingate.jsx
+/src/components/AuthShowpiece,jsx
+/src/components/ui/calender.jsx
+/src/components/ui/context-mennu.jsx
+/src/lib/Page Not Found.jsx
+/src/pages/ForgotPasswrod.jsx
+/src/pages/admin/AgentsBuilder.jsx
+/base44/entities/AgentConfig.jonc
