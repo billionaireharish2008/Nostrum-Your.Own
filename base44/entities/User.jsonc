@@ -1,0 +1,19 @@
+{
+  "name": "User",
+  "type": "object",
+  "properties": {
+    "first_name": {
+      "type": "string"
+    },
+    "role": {
+      "type": "string",
+      "enum": [
+        "user",
+        "admin",
+        "master_admin"
+      ],
+      "default": "user"
+    }
+  },
+  "required": []
+}
