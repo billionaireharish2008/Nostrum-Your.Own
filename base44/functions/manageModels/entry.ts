@@ -1,6 +1,6 @@
 import { createClientFromRequest } from 'npm:@base44/sdk@0.8.40';
 
-const MASTER_ADMIN_EMAIL = 'billionaireharish2008@gmail.com';
+const MASTER_ADMIN_EMAIL = Deno.env.get('MASTER_ADMIN_EMAIL') || '';
 const VALID_PROVIDERS = ['openai', 'anthropic', 'google', 'openai_compatible'];
 
 function publicModel(m: any) {
