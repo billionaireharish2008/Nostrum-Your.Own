@@ -37,7 +37,7 @@
         },
         {
           "user_condition": {
-            "email": "billionaireharish2008@gmail.com"
+            "role": "master_admin"
           }
         }
       ]
